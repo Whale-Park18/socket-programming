@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../../pch.h"
 
 #include <ws2tcpip.h>
@@ -25,7 +25,7 @@ namespace park18::chapter1
 			utils::error::ErrorHandling("WSAStartup() error");
 		}
 
-		
+
 		// 소켓 생성
 		SOCKET hSocket = ::socket(PF_INET, SOCK_STREAM, 0);
 		if (hSocket == INVALID_SOCKET)
