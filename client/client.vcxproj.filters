@@ -11,6 +11,9 @@
     <Filter Include="src\chapter1">
       <UniqueIdentifier>{407d4d57-354e-4b57-ae47-9940b7c41946}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter4">
+      <UniqueIdentifier>{6d3ff242-08dc-4fb8-b09d-0a33e9d3a3b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
@@ -20,6 +23,9 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="src\chapter1\entry.h">
       <Filter>src\chapter1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chapter4\entry.h">
+      <Filter>src\chapter4</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
