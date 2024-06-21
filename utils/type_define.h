@@ -1,6 +1,6 @@
 namespace park18::types
 {
-	// Unsigned Types
+	// Unsigned base integer types
 	using uchar		= unsigned char;
 	using ushort	= unsigned short;
 	using uint		= unsigned int;

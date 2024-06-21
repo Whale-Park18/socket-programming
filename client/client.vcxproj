@@ -172,6 +172,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="src\chapter1\entry.h" />
     <ClInclude Include="src\chapter4\entry.h" />
+    <ClInclude Include="src\chapter5\calc-client.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
