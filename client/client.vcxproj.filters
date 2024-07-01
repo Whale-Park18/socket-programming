@@ -17,6 +17,9 @@
     <Filter Include="src\chapter5">
       <UniqueIdentifier>{b43ec7fa-3e3f-4d77-a415-2183d5dd7e9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter6">
+      <UniqueIdentifier>{9527d846-14c4-46e9-bead-f578819c31b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
@@ -33,10 +36,16 @@
     <ClInclude Include="src\chapter5\calc-client.h">
       <Filter>src\chapter5</Filter>
     </ClInclude>
+    <ClInclude Include="src\chapter6\udp_sock.h">
+      <Filter>src\chapter6</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="src\chapter6\udp_sock.cpp">
+      <Filter>src\chapter6</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="client.rc">

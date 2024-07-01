@@ -20,6 +20,9 @@
     <Filter Include="src\chapter5">
       <UniqueIdentifier>{fb5762b4-48c8-433d-8dfd-eb1036ba9bda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter6">
+      <UniqueIdentifier>{c152671a-8823-4644-8c50-a7196b2a006e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -39,10 +42,16 @@
     <ClInclude Include="src\chapter5\calc-server.h">
       <Filter>src\chapter5</Filter>
     </ClInclude>
+    <ClInclude Include="src\chapter6\udp_sock.h">
+      <Filter>src\chapter6</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="src\chapter6\udp_sock.cpp">
+      <Filter>src\chapter6</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="server.rc">
