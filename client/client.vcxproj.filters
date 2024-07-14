@@ -20,6 +20,9 @@
     <Filter Include="src\chapter6">
       <UniqueIdentifier>{9527d846-14c4-46e9-bead-f578819c31b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter7">
+      <UniqueIdentifier>{e53f42a5-c41c-412e-a0ce-5443a95f91a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
@@ -38,6 +41,9 @@
     </ClInclude>
     <ClInclude Include="src\chapter6\udp_sock.h">
       <Filter>src\chapter6</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chapter7\file_client.h">
+      <Filter>src\chapter7</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

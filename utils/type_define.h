@@ -1,11 +1,11 @@
+#pragma once
+#include "pch.h"
+#include "types/basic_types.h"
+#include "types/smart_handle.h"
+
 namespace park18::types
 {
-	// Unsigned base integer types
-	using uchar		= unsigned char;
-	using ushort	= unsigned short;
-	using uint		= unsigned int;
-	using ulong		= unsigned long;
+	constexpr uint BufSize = 1024;
 
-	// Char
-	using wchar		= wchar_t;
+	using SmartSocket = SmartHandle < SOCKET, int(*)(SOCKET)>;
 }

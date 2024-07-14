@@ -13,6 +13,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcxproj", "{DB129D7B-200D-4079-A7C6-7BE785C869F7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "types", "types", "{82989A75-997B-4B4D-A33C-29BA7B82F2C4}"
+	ProjectSection(SolutionItems) = preProject
+		utils\types\basic_types.h = utils\types\basic_types.h
+		utils\types\smart_handle.h = utils\types\smart_handle.h
+		utils\types\smart_handle.hpp = utils\types\smart_handle.hpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -40,6 +47,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82989A75-997B-4B4D-A33C-29BA7B82F2C4} = {617BD615-DF39-414B-B8D5-870D2E514979}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B15FF049-FCBD-4FDD-BDCF-34621627F5E2}
