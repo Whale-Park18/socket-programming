@@ -6,6 +6,8 @@
 #include <string_view>
 #include <format>
 
+#include <WS2tcpip.h>
+
 namespace park18::chapter1
 {
 	int entry(int argc, char* argv[])

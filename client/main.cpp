@@ -7,6 +7,7 @@
 #include "./src/chapter5/calc-client.h"
 #include "./src/chapter6/udp_sock.h"
 #include "./src/chapter7/file_client.h"
+#include "./src/chapter9/ehco_client.h"
 
 int main(int argc, char* argv[])
 {
@@ -17,5 +18,6 @@ int main(int argc, char* argv[])
 
     //park18::chapter6::EchoClient(argc, argv);
     //park18::chapter6::ConnectEchoClient(argc, argv);
-    park18::chapter7::FileClientStart(argc, argv);
+    //park18::chapter7::FileClientStart(argc, argv);
+    park18::chapter9::StartClient(argc, argv);
 }

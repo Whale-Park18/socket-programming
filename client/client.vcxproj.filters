@@ -23,6 +23,9 @@
     <Filter Include="src\chapter7">
       <UniqueIdentifier>{e53f42a5-c41c-412e-a0ce-5443a95f91a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter9">
+      <UniqueIdentifier>{1fc7a34d-31b7-4888-a8e8-5e9ee4250c59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="src\chapter7\file_client.h">
       <Filter>src\chapter7</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chapter9\ehco_client.h">
+      <Filter>src\chapter9</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

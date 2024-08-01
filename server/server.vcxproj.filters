@@ -29,6 +29,9 @@
     <Filter Include="src\chapter8">
       <UniqueIdentifier>{d305fbae-bd92-4b18-afc0-3f63f896bd9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter9">
+      <UniqueIdentifier>{0a6c36ae-78d2-4315-9cfd-07fbf563ffa4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="src\chapter8\entry.h">
       <Filter>src\chapter8</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chapter9\ehco_server.h">
+      <Filter>src\chapter9</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
