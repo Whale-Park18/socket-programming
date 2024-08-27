@@ -1,14 +1,9 @@
 ﻿#pragma once
-#include "../../pch.h"
-
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <format>
+#include "global.h"
 
 namespace park18::chapter1
 {
-	static int entry(int argc, char* argv[])
+	static int server(int argc, char* argv[])
 	{
 		if (argc != 2)
 		{

@@ -32,36 +32,38 @@
     <Filter Include="src\chapter9">
       <UniqueIdentifier>{0a6c36ae-78d2-4315-9cfd-07fbf563ffa4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter12">
+      <UniqueIdentifier>{7ae50965-fc4f-410e-b1f5-c6dafe91ae6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="src\chapter1\entry.h">
+    <ClInclude Include="src\chapter1\hello_server.h">
       <Filter>src\chapter1</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter3\entry.h">
+    <ClInclude Include="src\chapter3\network_conv.h">
       <Filter>src\chapter3</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter4\entry.h">
+    <ClInclude Include="src\chapter4\echo_server.h">
       <Filter>src\chapter4</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter5\calc-server.h">
+    <ClInclude Include="src\chapter5\calc_server.h">
       <Filter>src\chapter5</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter6\udp_sock.h">
+    <ClInclude Include="src\chapter6\udp_echo_server.h">
       <Filter>src\chapter6</Filter>
     </ClInclude>
     <ClInclude Include="src\chapter7\file_server.h">
       <Filter>src\chapter7</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter8\entry.h">
+    <ClInclude Include="src\chapter8\domain.h">
       <Filter>src\chapter8</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter9\ehco_server.h">
+    <ClInclude Include="src\chapter9\socket_option.h">
       <Filter>src\chapter9</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chapter12\ehco_select_serer.h">
+      <Filter>src\chapter12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

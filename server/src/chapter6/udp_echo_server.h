@@ -1,8 +1,9 @@
 #pragma once
+#include "global.h"
 
 namespace park18::chapter6
 {
-	void EchoServer(int argc, char* argv[])
+	void udp_echo_server(int argc, char* argv[])
 	{
 		if (argc != 2)
 		{
@@ -54,7 +55,7 @@ namespace park18::chapter6
 		WSACleanup();
 	}
 
-	void ConnectEchoServer(int argc, char* argv[])
+	void udp_connect_echo_server(int argc, char* argv[])
 	{
 		if (argc != 2)
 		{

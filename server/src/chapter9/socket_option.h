@@ -1,13 +1,11 @@
 #pragma once
-#include "pch.h"
-
-#include <format>
+#include "global.h"
 
 namespace park18::chapter9
 {
 	WSADATA wsaData = { 0 };
 
-	void Init()
+	void init()
 	{
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
@@ -15,12 +13,12 @@ namespace park18::chapter9
 		}
 	}
 
-	void Cleanup()
+	void cleanup()
 	{
 		WSACleanup();
 	}
 
-	void PrintAcceptInfo(const SOCKADDR_IN& acceptAddr)
+	void print_accept_info(const SOCKADDR_IN& acceptAddr)
 	{
 		char ip[1024] = { 0 };
 		strcpy_s(ip, inet_ntoa(acceptAddr.sin_addr));
@@ -30,9 +28,9 @@ namespace park18::chapter9
 		std::cout << std::format("AcceptInfo IP: {}, Port: {}", ip, port) << std::endl;
 	}
 
-	void StartServer(int argc, char* argv[])
+	void echo_server(int argc, char* argv[])
 	{
-		Init();
+		init();
 		std::cout << "Start Server" << std::endl;
 
 		SOCKET listenSock = socket(PF_INET, SOCK_STREAM, 0);
@@ -64,7 +62,7 @@ namespace park18::chapter9
 		int acceptAddrSize = sizeof(acceptAddr);
 		SOCKET acceptSock = accept(listenSock, reinterpret_cast<SOCKADDR*>(&acceptAddr), &acceptAddrSize);
 
-		PrintAcceptInfo(acceptAddr);
+		print_accept_info(acceptAddr);
 
 		int recvSize = 0;
 		char buf[1024] = { 0 };
@@ -79,6 +77,6 @@ namespace park18::chapter9
 
 		closesocket(acceptSock);
 		closesocket(listenSock);
-		Cleanup();
+		cleanup();
 	}
 }

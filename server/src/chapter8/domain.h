@@ -1,15 +1,11 @@
 #pragma once
-#include "pch.h"
+#include "global.h"
 
-#include <format>
-#include <string>
-
-#include <WinSock2.h>
 #include <WS2tcpip.h>
 
 namespace park18::chapter8
 {
-	void PrintDomainToIP(char* domain, char* service)
+	void print_domain_to_ip(char* domain, char* service)
 	{
 		if (std::strlen(domain) == 0)
 		{
@@ -48,7 +44,7 @@ namespace park18::chapter8
 		freeaddrinfo(res);
 	}
 
-	void PrintIPToDomain(char* ip, short port = 0)
+	void print_ip_to_domain(char* ip, short port = 0)
 	{
 		if (std::strlen(ip) == 0)
 		{
@@ -76,21 +72,21 @@ namespace park18::chapter8
 		std::cout << std::endl;
 	}
 
-	void entry()
+	void test_domain()
 	{
 		WSADATA wsaData = { 0 };
 		WSAStartup(MAKEWORD(2, 2), &wsaData);
 
-		PrintDomainToIP((char*)"www.naver.com", nullptr);
-		PrintDomainToIP((char*)"www.naver.com", (char*)"https");
-		PrintDomainToIP((char*)"naver.com", nullptr);
-		PrintDomainToIP((char*)"google.com", nullptr);
+		print_domain_to_ip((char*)"www.naver.com", nullptr);
+		print_domain_to_ip((char*)"www.naver.com", (char*)"https");
+		print_domain_to_ip((char*)"naver.com", nullptr);
+		print_domain_to_ip((char*)"google.com", nullptr);
 
-		PrintIPToDomain((char*)"223.130.200.236");
-		PrintIPToDomain((char*)"223.130.200.219");
-		PrintIPToDomain((char*)"223.130.192.247");
-		PrintIPToDomain((char*)"223.130.192.248");
-		PrintIPToDomain((char*)"142.250.206.238");
+		print_ip_to_domain((char*)"223.130.200.236");
+		print_ip_to_domain((char*)"223.130.200.219");
+		print_ip_to_domain((char*)"223.130.192.247");
+		print_ip_to_domain((char*)"223.130.192.248");
+		print_ip_to_domain((char*)"142.250.206.238");
 
 		WSACleanup();
 	}

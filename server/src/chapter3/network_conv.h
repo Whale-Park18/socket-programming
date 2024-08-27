@@ -1,15 +1,15 @@
 #pragma once
-#include "../../pch.h"
+#include "global.h"
 
 #include <format>
 
 namespace park18::chapter3
 {
-	void NetworkByteOrder();
-	void InitAddress();
-	void WindowsHelper();
+	void network_byte_drder();
+	void init_address();
+	void windows_helper();
 
-	void entry()
+	void test_conv()
 	{
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
@@ -20,21 +20,21 @@ namespace park18::chapter3
 		std::cout << "[CPU: AMD]" << std::endl;
 
 		std::cout << "========== NetworkByhteOrder ==========" << std::endl;
-		NetworkByteOrder();
+		network_byte_drder();
 		std::cout << "========== NetworkByhteOrder ==========\n" << std::endl;
 
 		std::cout << "========== InitAddress ==========" << std::endl;
-		InitAddress();
+		init_address();
 		std::cout << "========== InitAddress ==========\n" << std::endl;
 
 		std::cout << "========== WindowsHelper ==========" << std::endl;
-		WindowsHelper();
+		windows_helper();
 		std::cout << "========== WindowsHelper ==========\n" << std::endl;
 
 		WSACleanup();
 	}
 
-	void NetworkByteOrder()
+	void network_byte_drder()
 	{
 		types::ushort hostPort = 0x1234;
 		types::ushort netPort = 0;
@@ -52,7 +52,7 @@ namespace park18::chapter3
 			<< "netAddr: " << std::hex << netAddress << std::endl;
 	}
 
-	void InitAddress()
+	void init_address()
 	{
 		std::string address{ "210.220.163.82" };
 		types::ulong conversionAddress = ::inet_addr(address.c_str());
@@ -65,7 +65,7 @@ namespace park18::chapter3
 			<< "NetworkByteOrder Address: " << conversionAddress << std::endl;
 	}
 
-	void WindowsHelper()
+	void windows_helper()
 	{
 		char address[] = "210.220.163.82";
 		SOCKADDR_IN serverAddress;

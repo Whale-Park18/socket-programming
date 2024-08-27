@@ -1,5 +1,5 @@
 #pragma
-#include "../../pch.h"
+#include "global.h"
 
 #include <format>
 #include <memory>
@@ -14,7 +14,7 @@ namespace park18::chapter5
 	/// </summary>
 	/// <param name="argc">애플리케이션 인자 개수</param>
 	/// <param name="argv">애플리케이션 인자</param>
-	void StartService(int argc, char* argv[])
+	void calc_server(int argc, char* argv[])
 	{
 		if (argc != 2)
 		{

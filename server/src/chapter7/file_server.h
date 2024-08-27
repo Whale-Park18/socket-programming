@@ -1,8 +1,9 @@
 #pragma once
+#include "global.h"
 
 namespace park18::chapter7
 {
-	void FileServerStart(int argc, char* argv[])
+	void file_server(int argc, char* argv[])
 	{
 		WSADATA wsaData = { 0 };
 		WSAStartup(MAKEWORD(2, 2), &wsaData);

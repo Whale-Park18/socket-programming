@@ -1,5 +1,5 @@
 #pragma once
-#include "../../pch.h"
+#include "global.h"
 
 #include <iostream>
 #include <iostream>
@@ -14,7 +14,7 @@ namespace park18::chapter4
 	/// <summary>
 	/// echo server
 	/// </summary>
-	int entry(int argc, char* argv[])
+	int echo_server(int argc, char* argv[])
 	{
 		if (argc != 2)
 		{
