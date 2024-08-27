@@ -3,21 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{617BD615-DF39-414B-B8D5-870D2E514979}"
-	ProjectSection(SolutionItems) = preProject
-		utils\error.h = utils\error.h
-		utils\type_define.h = utils\type_define.h
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcxproj", "{BFDE40D0-BEFD-4378-B5A7-4B283FAA52E2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcxproj", "{DB129D7B-200D-4079-A7C6-7BE785C869F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "types", "types", "{82989A75-997B-4B4D-A33C-29BA7B82F2C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "include", "include", "{10935A4E-50CC-4BA2-8D80-60AC09AF8DC9}"
 	ProjectSection(SolutionItems) = preProject
-		utils\types\basic_types.h = utils\types\basic_types.h
-		utils\types\smart_handle.h = utils\types\smart_handle.h
-		utils\types\smart_handle.hpp = utils\types\smart_handle.hpp
+		include\framework.h = include\framework.h
+		include\global.h = include\global.h
+		include\safe_data.h = include\safe_data.h
+		include\targetver.h = include\targetver.h
+		include\type_define.h = include\type_define.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{2EC22FC0-07A8-4631-B894-8B41ED2395B8}"
+	ProjectSection(SolutionItems) = preProject
+		include\utils\error.h = include\utils\error.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "safe_data", "safe_data", "{1321B6AC-870B-4DA4-806C-79633F7C5A2D}"
+	ProjectSection(SolutionItems) = preProject
+		include\safe_data\basic_safe_data.h = include\safe_data\basic_safe_data.h
+		include\safe_data\safe_handle.h = include\safe_data\safe_handle.h
+		include\safe_data\safe_socket.h = include\safe_data\safe_socket.h
 	EndProjectSection
 EndProject
 Global
@@ -49,7 +57,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{82989A75-997B-4B4D-A33C-29BA7B82F2C4} = {617BD615-DF39-414B-B8D5-870D2E514979}
+		{2EC22FC0-07A8-4631-B894-8B41ED2395B8} = {10935A4E-50CC-4BA2-8D80-60AC09AF8DC9}
+		{1321B6AC-870B-4DA4-806C-79633F7C5A2D} = {10935A4E-50CC-4BA2-8D80-60AC09AF8DC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B15FF049-FCBD-4FDD-BDCF-34621627F5E2}
