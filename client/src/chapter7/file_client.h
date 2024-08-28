@@ -1,9 +1,9 @@
 #pragma once
-#include "pch.h"
+#include "global.h"
 
 namespace park18::chapter7
 {
-	void FileClientStart(int argc, char* argv[])
+	void file_client(int argc, char* argv[])
 	{
 		WSADATA wsaData = { 0 };
 		WSAStartup(MAKEWORD(2, 2), &wsaData);

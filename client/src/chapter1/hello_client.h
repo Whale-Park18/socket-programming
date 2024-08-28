@@ -1,16 +1,11 @@
 ﻿#pragma once
-#include "../../pch.h"
-
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <format>
+#include "global.h"
 
 #include <WS2tcpip.h>
 
 namespace park18::chapter1
 {
-	int entry(int argc, char* argv[])
+	int client_start(int argc, char* argv[])
 	{
 		if (argc != 3)
 		{

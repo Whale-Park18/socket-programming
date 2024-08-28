@@ -1,11 +1,5 @@
 #pragma once
-#include "../../pch.h"
-
-#include <iostream>
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <format>
+#include "global.h"
 
 namespace park18::chapter4
 {
@@ -14,7 +8,7 @@ namespace park18::chapter4
 	/// <summary>
 	/// echo client
 	/// </summary>
-	int entry(int argc, char* argv[])
+	int echo_client(int argc, char* argv[])
 	{
 		if (argc != 3)
 		{

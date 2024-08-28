@@ -28,21 +28,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="src\chapter1\entry.h">
+    <ClInclude Include="src\chapter1\hello_client.h">
       <Filter>src\chapter1</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter4\entry.h">
+    <ClInclude Include="src\chapter4\echo_client.h">
       <Filter>src\chapter4</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter5\calc-client.h">
+    <ClInclude Include="src\chapter5\calc_client.h">
       <Filter>src\chapter5</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter6\udp_sock.h">
+    <ClInclude Include="src\chapter6\udp_client.h">
       <Filter>src\chapter6</Filter>
     </ClInclude>
     <ClInclude Include="src\chapter7\file_client.h">
@@ -54,8 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="src\chapter6\udp_sock.cpp">
+    <ClCompile Include="src\chapter6\udp_client.cpp">
       <Filter>src\chapter6</Filter>
     </ClCompile>
   </ItemGroup>

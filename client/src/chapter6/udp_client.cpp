@@ -1,10 +1,7 @@
-#include "pch.h"
-#include "udp_sock.h"
+#include "global.h"
+#include "udp_client.h"
 
-#include <string>
-#include <format>
-
-void park18::chapter6::EchoClient(int argc, char* argv[])
+void park18::chapter6::udp_echo_client(int argc, char* argv[])
 {
 	if (argc != 3)
 	{
@@ -43,7 +40,7 @@ void park18::chapter6::EchoClient(int argc, char* argv[])
 	WSACleanup();
 }
 
-void park18::chapter6::ConnectEchoClient(int argc, char* argv[])
+void park18::chapter6::udp_connect_echo_client(int argc, char* argv[])
 {
 	if (argc != 3)
 	{

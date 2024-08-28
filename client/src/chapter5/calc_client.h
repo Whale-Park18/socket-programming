@@ -1,7 +1,6 @@
 #pragma once
-#include "../../pch.h"
+#include "global.h"
 
-#include <format>
 #include <vector>
 #include <memory>
 
@@ -14,7 +13,7 @@ namespace park18::chapter5
 	/// </summary>
 	/// <param name="argc">애플리케이션 인자 개수</param>
 	/// <param name="argv">애플리케이션 인자</param>
-	void StartService(int argc, char* argv[])
+	void calc_client(int argc, char* argv[])
 	{
 		if (argc != 3)
 		{

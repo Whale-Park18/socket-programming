@@ -1,13 +1,11 @@
 #pragma once
-#include "pch.h"
-
-#include <format>
+#include "global.h"
 
 namespace park18::chapter9
 {
 	WSADATA wsaData = { 0 };
 
-	void Init()
+	void init()
 	{
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
@@ -15,14 +13,14 @@ namespace park18::chapter9
 		}
 	}
 
-	void Cleanup()
+	void cleanup()
 	{
 		WSACleanup();
 	}
 
-	void StartClient(int argc, char* argv[])
+	void echo_client(int argc, char* argv[])
 	{
-		Init();
+		init();
 
 		SOCKET connectSock = socket(PF_INET, SOCK_STREAM, 0);
 		if (connectSock == INVALID_SOCKET)
@@ -59,6 +57,6 @@ namespace park18::chapter9
 		std::cout << "Client End" << std::endl;
 
 		closesocket(connectSock);
-		Cleanup();
+		cleanup();
 	}
 }
