@@ -166,7 +166,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="src\chapter12\ehco_select_serer.h" />
+    <ClInclude Include="src\chapter12\ehco_select_sever.h" />
     <ClInclude Include="src\chapter1\hello_server.h" />
     <ClInclude Include="src\chapter3\network_conv.h" />
     <ClInclude Include="src\chapter4\echo_server.h" />
@@ -183,6 +183,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\chapter12\ehco_select_sever.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="server.rc" />

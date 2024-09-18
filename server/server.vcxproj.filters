@@ -62,12 +62,15 @@
     <ClInclude Include="src\chapter9\socket_option.h">
       <Filter>src\chapter9</Filter>
     </ClInclude>
-    <ClInclude Include="src\chapter12\ehco_select_serer.h">
+    <ClInclude Include="src\chapter12\ehco_select_sever.h">
       <Filter>src\chapter12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\chapter12\ehco_select_sever.cpp">
+      <Filter>src\chapter12</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="server.rc">
