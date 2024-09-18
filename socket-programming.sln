@@ -19,6 +19,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{2EC22FC0-07A8-4631-B894-8B41ED2395B8}"
 	ProjectSection(SolutionItems) = preProject
 		include\utils\error.h = include\utils\error.h
+		include\utils\net_utils.h = include\utils\net_utils.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "safe_data", "safe_data", "{1321B6AC-870B-4DA4-806C-79633F7C5A2D}"
