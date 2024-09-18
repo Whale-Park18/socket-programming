@@ -14,7 +14,7 @@ namespace park18::chapter3
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling("WSAStartup() error");
+			utils::error::error_handling("WSAStartup() error");
 		}
 
 		std::cout << "[CPU: AMD]" << std::endl;
@@ -58,7 +58,7 @@ namespace park18::chapter3
 		types::ulong conversionAddress = ::inet_addr(address.c_str());
 		if (conversionAddress == INADDR_NONE)
 		{
-			utils::error::ErrorHandling("Error INADDR_NONE");
+			utils::error::error_handling("Error INADDR_NONE");
 		}
 
 		std::cout << std::showbase << std::hex
@@ -74,7 +74,7 @@ namespace park18::chapter3
 		auto ret = ::WSAStringToAddressA(address, AF_INET, NULL, (SOCKADDR*)&serverAddress, &size);
 		if (ret != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAStringToAddress: {} {}", ::GetLastError(), size));
+			utils::error::error_handling(std::format("[E] WSAStringToAddress: {} {}", ::GetLastError(), size));
 		}
 
 		char buffer[MAX_PATH] = { 0, };
@@ -83,7 +83,7 @@ namespace park18::chapter3
 		ret = ::WSAAddressToStringA((SOCKADDR*)&serverAddress, sizeof(serverAddress), NULL, buffer, (DWORD*)&size);
 		if (ret != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAAddressToString: {} {}", ::GetLastError(), size));
+			utils::error::error_handling(std::format("[E] WSAAddressToString: {} {}", ::GetLastError(), size));
 		}
 
 		std::cout << std::showbase << std::hex

@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 {
 	if (argc != 2)
 	{
-		park18::utils::error::ErrorHandling("[E] need Port");
+		park18::utils::error::error_handling("[E] need Port");
 	}
 
 	//park18::chapter1::server(argc, argv);

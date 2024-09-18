@@ -15,14 +15,14 @@ namespace park18::chapter1
 		WSADATA wsaData;
 		if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling("WSAStartup() error");
+			utils::error::error_handling("WSAStartup() error");
 		}
 
 		// 소켓 생성
 		SOCKET hServerSock = ::socket(PF_INET, SOCK_STREAM, 0);
 		if (hServerSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling("socket() error");
+			utils::error::error_handling("socket() error");
 		}
 
 		SOCKADDR_IN serverAddress = { 0, };
@@ -33,13 +33,13 @@ namespace park18::chapter1
 		// 소켓에 주소, 포트 정보 할당
 		if (::bind(hServerSock, (SOCKADDR*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("bind() error");
+			utils::error::error_handling("bind() error");
 		}
 
 		// 연결 가능 상태 전환
 		if (::listen(hServerSock, 5) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("listen() error");
+			utils::error::error_handling("listen() error");
 		}
 
 		SOCKADDR_IN clinetAddress = { 0, };
@@ -49,7 +49,7 @@ namespace park18::chapter1
 		SOCKET hClientSock = ::accept(hServerSock, (SOCKADDR*)&clinetAddress, &clientAddressLength);
 		if (hClientSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling("accept() error");
+			utils::error::error_handling("accept() error");
 		}
 
 		// 메시지 전송

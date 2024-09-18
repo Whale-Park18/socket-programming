@@ -9,7 +9,7 @@ namespace park18::chapter9
 	{
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAStartup - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] WSAStartup - {}", WSAGetLastError()));
 		}
 	}
 
@@ -25,7 +25,7 @@ namespace park18::chapter9
 		SOCKET connectSock = socket(PF_INET, SOCK_STREAM, 0);
 		if (connectSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling(std::format("[E] socket - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] socket - {}", WSAGetLastError()));
 		}
 
 		sockaddr_in connectAddr = { 0 };
@@ -35,7 +35,7 @@ namespace park18::chapter9
 
 		if (connect(connectSock, reinterpret_cast<sockaddr*>(&connectAddr), sizeof(connectAddr)) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] connect - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] connect - {}", WSAGetLastError()));
 		}
 
 		std::cout << "connect IP: " << argv[1] << " Port: " << argv[2] << std::endl;

@@ -17,7 +17,7 @@ namespace park18::chapter1
 		WSADATA wsaData;
 		if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling("WSAStartup() error");
+			utils::error::error_handling("WSAStartup() error");
 		}
 
 
@@ -25,7 +25,7 @@ namespace park18::chapter1
 		SOCKET hSocket = ::socket(PF_INET, SOCK_STREAM, 0);
 		if (hSocket == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling("socket() error");
+			utils::error::error_handling("socket() error");
 		}
 
 		SOCKADDR_IN serverAddress = { 0, };
@@ -36,7 +36,7 @@ namespace park18::chapter1
 		// 연결 요청
 		if (::connect(hSocket, (SOCKADDR*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("connect() error");
+			utils::error::error_handling("connect() error");
 		}
 
 		// 메시지 수신
@@ -44,7 +44,7 @@ namespace park18::chapter1
 		int messageLength = ::recv(hSocket, message, _countof(message) - 1, 0);
 		if (messageLength == -1)
 		{
-			utils::error::ErrorHandling("read() error");
+			utils::error::error_handling("read() error");
 		}
 
 		std::cout << std::format("Message from [Server]: {}", message) << std::endl;

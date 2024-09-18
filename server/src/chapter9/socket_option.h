@@ -9,7 +9,7 @@ namespace park18::chapter9
 	{
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAStartup - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] WSAStartup - {}", WSAGetLastError()));
 		}
 	}
 
@@ -36,14 +36,14 @@ namespace park18::chapter9
 		SOCKET listenSock = socket(PF_INET, SOCK_STREAM, 0);
 		if (listenSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling(std::format("[E] listenSock - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] listenSock - {}", WSAGetLastError()));
 		}
 
 		bool option = true;
 		int optionSize = sizeof(option);
 		if (setsockopt(listenSock, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<char*>(&option), optionSize) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] setsockopt - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] setsockopt - {}", WSAGetLastError()));
 		}
 
 		SOCKADDR_IN listenAddr = { 0 };
@@ -53,7 +53,7 @@ namespace park18::chapter9
 
 		if (bind(listenSock, reinterpret_cast<SOCKADDR*>(&listenAddr), sizeof(listenAddr)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling(std::format("[E] bind - {}", WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] bind - {}", WSAGetLastError()));
 		}
 
 		listen(listenSock, 5);

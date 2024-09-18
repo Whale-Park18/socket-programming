@@ -17,21 +17,21 @@ namespace park18::chapter5
 	{
 		if (argc != 3)
 		{
-			utils::error::ErrorHandling(std::format("[E] {} Argument: Server-IP, Server-Port", argv[0]));
+			utils::error::error_handling(std::format("[E] {} Argument: Server-IP, Server-Port", argv[0]));
 		}
 
 		// 1. 소켓 기능 활성화
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAStartup: {}", ::GetLastError()));
+			utils::error::error_handling(std::format("[E] WSAStartup: {}", ::GetLastError()));
 		}
 
 		// 2. 서버 소켓 생성
 		SOCKET serverSock = ::socket(AF_INET, SOCK_STREAM, 0);
 		if (serverSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling(std::format("[E] socket: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] socket: {}", ::WSAGetLastError()));
 		}
 
 		// 3.1. 서버 소켓 주소 할당
@@ -44,7 +44,7 @@ namespace park18::chapter5
 		// 3.2. 서버 소켓 연결
 		if (::connect(serverSock, (SOCKADDR*)&serverSockAddr, sizeof(serverSockAddr)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling(std::format("[E] connect: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] connect: {}", ::WSAGetLastError()));
 		}
 
 		while (true)
@@ -87,14 +87,14 @@ namespace park18::chapter5
 			// 6. 버퍼 전송
 			if (::send(serverSock, command.get(), bufferSize, 0) == SOCKET_ERROR)
 			{
-				utils::error::ErrorHandling(std::format("[E] send: {}", ::WSAGetLastError()));
+				utils::error::error_handling(std::format("[E] send: {}", ::WSAGetLastError()));
 			}
 
 			// 7. 결과 받기
 			int result = 0;
 			if (::recv(serverSock, (char*)&result, SIZEOF_OPERAND, 0) == SOCKET_ERROR)
 			{
-				utils::error::ErrorHandling(std::format("[E] recv: {}", ::WSAGetLastError()));
+				utils::error::error_handling(std::format("[E] recv: {}", ::WSAGetLastError()));
 			}
 
 			std::cout << "[O] result: " << result << std::endl;

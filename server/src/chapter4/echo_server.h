@@ -26,14 +26,14 @@ namespace park18::chapter4
 		WSADATA wsaData;
 		if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling("WSAStatup() Error");
+			utils::error::error_handling("WSAStatup() Error");
 		}
 
 		// 2. 호스트 연결 수신 소켓 생성
 		SOCKET hListenSock = ::socket(PF_INET, SOCK_STREAM, 0);
 		if (hListenSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling("socket() Error");
+			utils::error::error_handling("socket() Error");
 		}
 
 		// 3.1. 소켓 주소 초기화
@@ -46,13 +46,13 @@ namespace park18::chapter4
 		// 3.2. 소켓 주소 할당
 		if (::bind(hListenSock, (SOCKADDR*)&listenAddress, sizeof(listenAddress)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("bind() Error");
+			utils::error::error_handling("bind() Error");
 		}
 
 		// 4. 연결 가능 상태 전환
 		if (::listen(hListenSock, 5) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("listen() Error");
+			utils::error::error_handling("listen() Error");
 		}
 
 		SOCKET hClientSock = NULL;
@@ -67,7 +67,7 @@ namespace park18::chapter4
 			hClientSock = ::accept(hListenSock, (SOCKADDR*)&clientAddres, &clientAddresSize);
 			if (hClientSock == -1)
 			{
-				utils::error::ErrorHandling("accept() Error");
+				utils::error::error_handling("accept() Error");
 			}
 			
 			std::string		hostIP	 = ::inet_ntoa(clientAddres.sin_addr);

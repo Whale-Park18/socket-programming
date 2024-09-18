@@ -5,7 +5,7 @@
 
 namespace park18::utils::error
 {
-	static void ErrorHandling(std::string_view message)
+	static void error_handling(std::string_view message)
 	{
 		std::cerr << message << std::endl;
 		::exit(1);

@@ -20,14 +20,14 @@ namespace park18::chapter4
 		WSADATA wsaData;
 		if (::WSAStartup(MAKEWORD(2, 2, ), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling("WSAStatup() Error");
+			utils::error::error_handling("WSAStatup() Error");
 		}
 
 		// 2. 서버 연결 소켓 생성
 		SOCKET hServerSock = ::socket(PF_INET, SOCK_STREAM, 0);
 		if (hServerSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling("socket() Error");
+			utils::error::error_handling("socket() Error");
 		}
 
 		// 3. 소켓 주소 초기화
@@ -40,7 +40,7 @@ namespace park18::chapter4
 		// 4. 서버 연결 요청
 		if (::connect(hServerSock, (SOCKADDR*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling("connect() Error");
+			utils::error::error_handling("connect() Error");
 		}
 		else
 		{

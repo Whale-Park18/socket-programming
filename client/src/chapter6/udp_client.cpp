@@ -5,7 +5,7 @@ void park18::chapter6::udp_echo_client(int argc, char* argv[])
 {
 	if (argc != 3)
 	{
-		utils::error::ErrorHandling(std::format("[E] Need infomation IP, Port: {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] Need infomation IP, Port: {}", ::WSAGetLastError()));
 	}
 
 	std::cout << "Client Start EchoClient" << std::endl;
@@ -13,13 +13,13 @@ void park18::chapter6::udp_echo_client(int argc, char* argv[])
 	WSADATA wsaData = { 0 };
 	if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 	{
-		utils::error::ErrorHandling(std::format("[E] WSAStartup(): {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] WSAStartup(): {}", ::WSAGetLastError()));
 	}
 
 	SOCKET clientSock = ::socket(PF_INET, SOCK_DGRAM, 0);
 	if (clientSock == INVALID_SOCKET)
 	{
-		utils::error::ErrorHandling(std::format("[E] socket(): {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] socket(): {}", ::WSAGetLastError()));
 	}
 
 	SOCKADDR_IN serverAddress{ 0 };
@@ -44,7 +44,7 @@ void park18::chapter6::udp_connect_echo_client(int argc, char* argv[])
 {
 	if (argc != 3)
 	{
-		utils::error::ErrorHandling(std::format("[E] Need infomation IP, Port: {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] Need infomation IP, Port: {}", ::WSAGetLastError()));
 	}
 
 	std::cout << "Client Start ConnectEchoClient" << std::endl;
@@ -52,13 +52,13 @@ void park18::chapter6::udp_connect_echo_client(int argc, char* argv[])
 	WSADATA wsaData = { 0 };
 	if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 	{
-		utils::error::ErrorHandling(std::format("[E] WSAStartup(): {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] WSAStartup(): {}", ::WSAGetLastError()));
 	}
 
 	SOCKET clientSock = socket(PF_INET, SOCK_DGRAM, 0);
 	if (clientSock == INVALID_SOCKET)
 	{
-		utils::error::ErrorHandling(std::format("[E] socket(): {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] socket(): {}", ::WSAGetLastError()));
 	}
 
 	SOCKADDR_IN serverAddress = { 0 };
@@ -69,7 +69,7 @@ void park18::chapter6::udp_connect_echo_client(int argc, char* argv[])
 
 	if (connect(clientSock, reinterpret_cast<SOCKADDR*>(&serverAddress), sizeof(serverAddress)) == SOCKET_ERROR)
 	{
-		utils::error::ErrorHandling(std::format("[E] socket(): {}", ::WSAGetLastError()));
+		utils::error::error_handling(std::format("[E] socket(): {}", ::WSAGetLastError()));
 	}
 
 	char message[1024] = { 0 };

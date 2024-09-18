@@ -9,11 +9,11 @@ int main(int argc, char* argv[])
 {
     if (argc != 3)
     {
-        park18::utils::error::ErrorHandling("[E] need IP, Port");
+        park18::utils::error::error_handling("[E] need IP, Port");
     }
 
     //park18::chapter1::client_start(argc, argv);
-    //park18::chapter4::echo_client(argc, argv);
+    park18::chapter4::echo_client(argc, argv);
     //park18::chapter5::calc_client(argc, argv);
     //park18::chapter6::udp_echo_client(argc, argv);
     //park18::chapter6::udp_connect_echo_client(argc, argv);

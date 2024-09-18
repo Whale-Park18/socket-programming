@@ -18,7 +18,7 @@ namespace park18::chapter5
 	{
 		if (argc != 2)
 		{
-			utils::error::ErrorHandling(std::format("[E] {} Argument: Port", argv[0]));
+			utils::error::error_handling(std::format("[E] {} Argument: Port", argv[0]));
 		}
 
 		std::cout << "Service Start" << std::endl;
@@ -27,14 +27,14 @@ namespace park18::chapter5
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		{
-			utils::error::ErrorHandling(std::format("[E] WSAStartup: {}", ::GetLastError()));
+			utils::error::error_handling(std::format("[E] WSAStartup: {}", ::GetLastError()));
 		}
 
 		// 2. Listen 소켓 생성
 		SOCKET listenSock = ::socket(AF_INET, SOCK_STREAM, 0);
 		if (listenSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling(std::format("[E] socket: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] socket: {}", ::WSAGetLastError()));
 		}
 
 		// 3.1. Listen 소켓 주소 할당
@@ -47,13 +47,13 @@ namespace park18::chapter5
 		// 3.2. Listen 소켓 주소 할당
 		if (::bind(listenSock, (SOCKADDR*)&listenSockAddr, sizeof(listenSockAddr)) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling(std::format("[E] bind: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] bind: {}", ::WSAGetLastError()));
 		}
 
 		// 4. 요청 가능 상태
 		if (::listen(listenSock, 5) == SOCKET_ERROR)
 		{
-			utils::error::ErrorHandling(std::format("[E] listen: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] listen: {}", ::WSAGetLastError()));
 		}
 
 		// 요청 소켓 생성
@@ -65,7 +65,7 @@ namespace park18::chapter5
 		acceptSock = ::accept(listenSock, (SOCKADDR*)&acceptSockAddr, &acceptSockAddrSize);
 		if (acceptSock == INVALID_SOCKET)
 		{
-			utils::error::ErrorHandling(std::format("[E] accept: {}", ::WSAGetLastError()));
+			utils::error::error_handling(std::format("[E] accept: {}", ::WSAGetLastError()));
 		}
 
 		std::string hostIP = ::inet_ntoa(acceptSockAddr.sin_addr);
@@ -78,7 +78,7 @@ namespace park18::chapter5
 			types::uchar operandCount = 0;
 			if ((::recv(acceptSock, (char*)&operandCount, SIZEOF_OPERATOR, 0)) == SOCKET_ERROR)
 			{
-				utils::error::ErrorHandling(std::format("[E] recv - operandCount: {}", ::WSAGetLastError()));
+				utils::error::error_handling(std::format("[E] recv - operandCount: {}", ::WSAGetLastError()));
 			}
 			std::cout << std::format("[I] Operand count: {}", operandCount) << std::endl;
 
@@ -96,7 +96,7 @@ namespace park18::chapter5
 				commandSize += ::recv(acceptSock, (command.get() + commandSize), SIZEOF_OPERAND, 0);
 				if (commandSize == SOCKET_ERROR)
 				{
-					utils::error::ErrorHandling(std::format("[E] recv - commandSize: {}", ::WSAGetLastError()));
+					utils::error::error_handling(std::format("[E] recv - commandSize: {}", ::WSAGetLastError()));
 				}
 
 			} while (commandSize < (operandCount * SIZEOF_OPERAND) + 1);
@@ -123,7 +123,7 @@ namespace park18::chapter5
 					break;
 				
 				default:
-					utils::error::ErrorHandling(std::format("[E] Wong operator"));
+					utils::error::error_handling(std::format("[E] Wong operator"));
 					break;
 				}
 
@@ -132,7 +132,7 @@ namespace park18::chapter5
 			
 			if (::send(acceptSock, (char*)&result, SIZEOF_OPERAND, 0) == SOCKET_ERROR)
 			{
-				utils::error::ErrorHandling(std::format("[E] send: {}", ::WSAGetLastError()));
+				utils::error::error_handling(std::format("[E] send: {}", ::WSAGetLastError()));
 			}
 		}
 
