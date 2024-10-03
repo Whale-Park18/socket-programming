@@ -53,6 +53,18 @@
     <ClCompile Include="src\chapter6\udp_client.cpp">
       <Filter>src\chapter6</Filter>
     </ClCompile>
+    <ClCompile Include="src\chapter1\hello_client.cpp">
+      <Filter>src\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter4\echo_client.cpp">
+      <Filter>src\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter5\calc_client.cpp">
+      <Filter>src\chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter7\file_client.cpp">
+      <Filter>src\chapter7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="client.rc">

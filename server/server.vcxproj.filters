@@ -71,6 +71,27 @@
     <ClCompile Include="src\chapter12\ehco_select_sever.cpp">
       <Filter>src\chapter12</Filter>
     </ClCompile>
+    <ClCompile Include="src\chapter9\socket_option.cpp">
+      <Filter>src\chapter9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter7\file_server.cpp">
+      <Filter>src\chapter7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter5\calc_server.cpp">
+      <Filter>src\chapter5</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter6\udp_echo_server.cpp">
+      <Filter>src\chapter6</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter4\echo_server.cpp">
+      <Filter>src\chapter4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter1\hello_server.cpp">
+      <Filter>src\chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter3\network_conv.cpp">
+      <Filter>src\chapter3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="server.rc">

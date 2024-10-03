@@ -181,7 +181,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\chapter1\hello_client.cpp" />
+    <ClCompile Include="src\chapter4\echo_client.cpp" />
+    <ClCompile Include="src\chapter5\calc_client.cpp" />
     <ClCompile Include="src\chapter6\udp_client.cpp" />
+    <ClCompile Include="src\chapter7\file_client.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="client.rc" />

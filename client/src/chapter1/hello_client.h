@@ -1,56 +1,25 @@
 ﻿#pragma once
 #include "global.h"
 
-#include <WS2tcpip.h>
-
 namespace park18::chapter1
 {
-	int client_start(int argc, char* argv[])
+	class client
 	{
-		if (argc != 3)
-		{
-			std::cout << std::format("Usage: {} <IP> <port>", argv[0]) << std::endl;
-			::exit(1);
-		}
+	public:
+		client(int argc, char* argv[]);
+		~client();
 
-		// 소켓 기능 활성화
+		void start();
+
+	private:
+		void init(int argc, char* argv[]);
+
+		void ready();
+
 		WSADATA wsaData;
-		if (::WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
-		{
-			utils::error::error_handling("WSAStartup() error");
-		}
+		std::string host;
+		unsigned short port;
 
-
-		// 소켓 생성
-		SOCKET hSocket = ::socket(PF_INET, SOCK_STREAM, 0);
-		if (hSocket == INVALID_SOCKET)
-		{
-			utils::error::error_handling("socket() error");
-		}
-
-		SOCKADDR_IN serverAddress = { 0, };
-		serverAddress.sin_family = AF_INET;
-		serverAddress.sin_addr.S_un.S_addr = ::inet_addr(argv[1]);
-		serverAddress.sin_port = htons(atoi(argv[2]));
-
-		// 연결 요청
-		if (::connect(hSocket, (SOCKADDR*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
-		{
-			utils::error::error_handling("connect() error");
-		}
-
-		// 메시지 수신
-		char message[MAX_PATH] = { 0, };
-		int messageLength = ::recv(hSocket, message, _countof(message) - 1, 0);
-		if (messageLength == -1)
-		{
-			utils::error::error_handling("read() error");
-		}
-
-		std::cout << std::format("Message from [Server]: {}", message) << std::endl;
-
-		// 소켓 정리 및 기능 비활성화
-		::closesocket(hSocket);
-		::WSACleanup();
-	}
+		SOCKET connectSock;
+	};
 }

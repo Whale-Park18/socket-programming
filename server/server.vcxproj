@@ -184,6 +184,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\chapter12\ehco_select_sever.cpp" />
+    <ClCompile Include="src\chapter1\hello_server.cpp" />
+    <ClCompile Include="src\chapter3\network_conv.cpp" />
+    <ClCompile Include="src\chapter4\echo_server.cpp" />
+    <ClCompile Include="src\chapter5\calc_server.cpp" />
+    <ClCompile Include="src\chapter6\udp_echo_server.cpp" />
+    <ClCompile Include="src\chapter7\file_server.cpp" />
+    <ClCompile Include="src\chapter9\socket_option.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="server.rc" />

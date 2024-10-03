@@ -3,35 +3,23 @@
 
 namespace park18::chapter7
 {
-	void file_client(int argc, char* argv[])
+	class file_client
 	{
-		WSADATA wsaData = { 0 };
-		WSAStartup(MAKEWORD(2, 2), &wsaData);
+	public:
+		file_client(int argc, char* argv[]);
+		~file_client();
 
-		SOCKET serverSock = socket(PF_INET, SOCK_STREAM, 0);
+		void start();
 
-		SOCKADDR_IN serverAddress = { 0 };
-		serverAddress.sin_family = AF_INET;
-		serverAddress.sin_addr.S_un.S_addr = inet_addr(argv[1]);
-		serverAddress.sin_port = htons(atoi(argv[2]));
+	private:
+		void init(int argc, char* argv[]);
 
-		connect(serverSock, reinterpret_cast<SOCKADDR*>(&serverAddress), sizeof(serverAddress));
+		void ready();
 
-		char buffer[types::BufSize] = { 0 };
-		FILE* pFile = nullptr;
-		fopen_s(&pFile, "test.txt", "wb");
+		WSADATA wsaData;
+		std::string host;
+		unsigned short port;
 
-		int readCount = 0;
-		while ((readCount = recv(serverSock, buffer, types::BufSize, 0)) != 0)
-		{
-			fwrite(reinterpret_cast<void*>(buffer), sizeof(char), readCount, pFile);
-		}
-		fclose(pFile);
-
-		std::cout << "[server to client] recv file" << std::endl;
-		send(serverSock, "Thanck you", 10, 0);
-
-		closesocket(serverSock);
-		WSACleanup();
-	}
+		SOCKET connectSock;
+	};
 }

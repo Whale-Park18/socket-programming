@@ -87,7 +87,10 @@ void park18::chapter12::echo_select_server::init(int argc, char* argv[])
 
 	// Win sock 예외 처리
 	SecureZeroMemory(&this->wsaData, sizeof(this->wsaData));
-	utils::network::net_startup(this->wsaData);
+	if (WSAStartup(MAKEWORD(2, 2), &this->wsaData) != 0)
+	{
+		utils::error::error_handling("[E] echo_select_server.init - WSADATA initialization falied");
+	}
 }
 
 void park18::chapter12::echo_select_server::ready()
