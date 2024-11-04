@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "include", "include", "{1093
 	ProjectSection(SolutionItems) = preProject
 		include\framework.h = include\framework.h
 		include\global.h = include\global.h
-		include\safe_data.h = include\safe_data.h
 		include\targetver.h = include\targetver.h
 		include\type_define.h = include\type_define.h
 	EndProjectSection
@@ -20,13 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{2EC22FC0
 	ProjectSection(SolutionItems) = preProject
 		include\utils\error.h = include\utils\error.h
 		include\utils\net_utils.h = include\utils\net_utils.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "safe_data", "safe_data", "{1321B6AC-870B-4DA4-806C-79633F7C5A2D}"
-	ProjectSection(SolutionItems) = preProject
-		include\safe_data\basic_safe_data.h = include\safe_data\basic_safe_data.h
-		include\safe_data\safe_handle.h = include\safe_data\safe_handle.h
-		include\safe_data\safe_socket.h = include\safe_data\safe_socket.h
 	EndProjectSection
 EndProject
 Global
@@ -59,7 +51,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EC22FC0-07A8-4631-B894-8B41ED2395B8} = {10935A4E-50CC-4BA2-8D80-60AC09AF8DC9}
-		{1321B6AC-870B-4DA4-806C-79633F7C5A2D} = {10935A4E-50CC-4BA2-8D80-60AC09AF8DC9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B15FF049-FCBD-4FDD-BDCF-34621627F5E2}

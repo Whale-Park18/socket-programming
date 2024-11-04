@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="src\chapter13\oob_client.h" />
     <ClInclude Include="src\chapter1\hello_client.h" />
     <ClInclude Include="src\chapter4\echo_client.h" />
     <ClInclude Include="src\chapter5\calc_client.h" />
@@ -181,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\chapter13\oob_client.cpp" />
     <ClCompile Include="src\chapter1\hello_client.cpp" />
     <ClCompile Include="src\chapter4\echo_client.cpp" />
     <ClCompile Include="src\chapter5\calc_client.cpp" />

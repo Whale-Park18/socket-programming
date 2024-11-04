@@ -35,6 +35,9 @@
     <Filter Include="src\chapter12">
       <UniqueIdentifier>{7ae50965-fc4f-410e-b1f5-c6dafe91ae6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter13">
+      <UniqueIdentifier>{663ed73a-f706-49ac-a8aa-3edf3f21acc6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
@@ -65,6 +68,9 @@
     <ClInclude Include="src\chapter12\ehco_select_sever.h">
       <Filter>src\chapter12</Filter>
     </ClInclude>
+    <ClInclude Include="src\chapter13\oob_server.h">
+      <Filter>src\chapter13</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -91,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="src\chapter3\network_conv.cpp">
       <Filter>src\chapter3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter13\oob_server.cpp">
+      <Filter>src\chapter13</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

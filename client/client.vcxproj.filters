@@ -26,6 +26,9 @@
     <Filter Include="src\chapter9">
       <UniqueIdentifier>{1fc7a34d-31b7-4888-a8e8-5e9ee4250c59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\chapter13">
+      <UniqueIdentifier>{c4c70d30-0dfc-4cf9-94fb-f9b40f074277}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h" />
@@ -47,6 +50,9 @@
     <ClInclude Include="src\chapter9\ehco_client.h">
       <Filter>src\chapter9</Filter>
     </ClInclude>
+    <ClInclude Include="src\chapter13\oob_client.h">
+      <Filter>src\chapter13</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -64,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="src\chapter7\file_client.cpp">
       <Filter>src\chapter7</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chapter13\oob_client.cpp">
+      <Filter>src\chapter13</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
